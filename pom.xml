@@ -37,11 +37,19 @@
 				available on test compilation and execution phases; the scope is not transitive
 			- system: the scope is similar to 'provide' but you have to provide JAR file explicitly
 		-->
+		<!-- TODO systemPath:
+			is used only for system dependency scope, otherwise build fails,
+			for example ${java.home}/lib
+		-->
+		<!-- TODO optional:
+			marks dependency only when the project itself is dependency. For example, project A depends
+			on project B, but project B may be not used in runtime of A. Hence, when we use A in project
+			X we don't use project B (it's not required for X to work correctly).
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
