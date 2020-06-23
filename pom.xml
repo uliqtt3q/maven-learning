@@ -6,12 +6,20 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
+
+	<!-- TODO GAV -->
 	<groupId>com.learning</groupId>
 	<artifactId>maven</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<name>maven</name>
+
+	<!-- TODO result of packaging
+		<packaging>jar</packaging>
+	-->
+
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -19,6 +27,16 @@
 	</properties>
 
 	<dependencies>
+		<!-- TODO available scopes:
+			- compile: default scope, dependencies with the scope are available in all classpaths
+			- provided: the scope dependencies are not transitive and you expect the JDK or a container
+				to provide it at runtime; only available on compilation/test classpaths
+			- runtime: the scope indicates dependencies that are not needed for compilation; it is
+				available only in the runtime and test classpaths
+			- test: the scope indicates dependencies which aren't needed for normal program using, are
+				available on test compilation and execution phases; the scope is not transitive
+			- system: the scope is similar to 'provide' but you have to provide JAR file explicitly
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -40,7 +58,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
-				<!-- here we exclude old version of junit -->
+				<!-- TODO exclusion from dependency -->
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
 					<artifactId>junit-vintage-engine</artifactId>
